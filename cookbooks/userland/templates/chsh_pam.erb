@@ -1,0 +1,5 @@
+# This allows users of group chsh to change their shells without a password.
+#
+# Per: http://serverfault.com/questions/202468/changing-the-shell-using-chsh-via-the-command-line-in-a-script
+#
+auth       sufficient   pam_wheel.so trust group=chsh

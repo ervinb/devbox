@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if [ -e /home/vagrant/oh-my-zsh/plugins/chucknorris/fortunes ]; then
+  printf "$(/usr/games/fortune -a /home/vagrant/oh-my-zsh/plugins/chucknorris/fortunes | /usr/games/cowthink)"
+fi

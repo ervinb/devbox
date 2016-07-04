@@ -1,0 +1,17 @@
+source "https://supermarket.chef.io"
+
+cookbook "base", path: "./cookbooks/base"
+cookbook "userland", path: "./cookbooks/userland"
+cookbook "build-essential"
+cookbook "sudo"
+cookbook "git"
+cookbook "docker"
+cookbook 'chef-apt-docker', '~> 1.0.0'
+cookbook "nginx"
+cookbook "mysql"
+cookbook "postgresql"
+cookbook "rabbitmq"
+cookbook "glusterfs"
+cookbook "java"
+cookbook "python"
+cookbook "rbenv"

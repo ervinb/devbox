@@ -1,0 +1,42 @@
+{
+  "name": "devbox",
+  "chef_type": "role",
+
+  "default_attributes": {
+    "default_user": "vagrant",
+    "authorization": {
+      "sudo": {
+        "users": ["vagrant"],
+        "passwordless": "true"
+      }
+    },
+    "chef-apt-docker": {
+      "components": ["main"]
+    },
+    "postgresql": {
+      "version": "9.4"
+    },
+    "java": {
+      "install_flavor": "openjdk",
+      "jdk_version": "8"
+    },
+    "mysql": {
+      "version": "5.6",
+      "port": "3306",
+      "data_dir": "/data",
+      "root_password": "123"
+    }
+  },
+
+  "run_list": [
+    "recipe[base]",
+    "recipe[sudo]",
+    "recipe[build-essential]",
+    "recipe[rabbitmq]",
+    "recipe[python]",
+    "recipe[postgresql]",
+    "recipe[nginx]",
+    "recipe[java]",
+    "recipe[userland]"
+  ]
+}
